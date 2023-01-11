@@ -4,9 +4,6 @@ from django.template.loader import render_to_string
 from iqworks.secrets_local import mail_user
 
 
-
-
-
 class ClientHandler:
 	def __init__(self, request):
 		self.name = request.POST.get('name')
