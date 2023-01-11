@@ -1,0 +1,160 @@
+{% extends "mainapp/base.html" %}
+{% load static %}
+{#{% load project_tags %}#}
+{% block title %}{{ title|title }}{% endblock %}
+{% block content %}
+    <div class="first-content">
+        <div class="main-text">
+            <span>Сделаем дом умнее</span>
+            <div class="submain-text">Проектирование и установка системы “Умный дом” европейского стандарта KNX</div>
+            <div class="buttons-on-first-content">
+                <a href="#" class="callback-first-content">
+                    Оставить заявку
+                </a>
+                <a href="#" id="video" class="video-first-content">
+                    <img class="img-icon-video" src="{% static 'img/play_video.svg' %}" alt="">
+                    Посмотреть видео
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="content-container add-border">
+        <div class="chapter-box add-border">
+            <div class="paragraph-text add-border">О технологии</div>
+            <div class="technology-text">
+                <img class="img-technology add-border float-img-left" src="{% static 'img/technology.png' %}" alt="Технология">
+                KNX — это мировой стандарт управления домом и зданием.
+                Будь то жилое, коммерческое или промышленное сооружение, автоматизация систем отопления,
+                кондиционирования и освещения имеет важное значение для энергоэффективности и максимального
+                удобства и безопасности пользователей. Вот где приходит KNX. Система KNX позволяет всем
+                компонентам взаимодействовать друг с другом, создавая динамическую систему управления зданием.
+                Благодаря более чем 495 производителям, соответствующим стандарту KNX,
+                гибкость и выбор не имеют себе равных.
+                <br/>
+                <br/>
+                Бесконечная гибкость и персонализация в настройке проекта автоматизации больше не мечта.
+                Это реально с KNX. Вы можете позволить широкому кругу устройств общаться друг с другом, даже если они от разных производителей.
+                KNX может даже интегрироваться с другими системами автоматизации Таким образом, выбор продуктов, которые вы хотите использовать,
+                принадлежит вам. Без ограничений, только возможности. KNX — это универсальное решение для любой задачи автоматизации.
+            </div>
+        </div>
+        <div class="chapter-box">
+            <div id="anchor" class="paragraph-text">Наши услуги</div>
+            <div class="services-box">
+                <div class="service-box-item">
+                    <img class="img-service" src="{% static 'img/img_project.svg' %}#project" alt="Проектирование">
+                    <span class="service-item-main-text"><a href="{% url 'mainapp:services' %}">Проектирование</a></span>
+                    <span class="service-item-text">Разработка проекта электроснабжения и автоматизации с учетом Ваших пожеланий и требований европейского стандарта KNX.</span>
+                </div>
+                <div class="service-box-item">
+                    <img class="img-service" src="{% static 'img/img_sale.svg' %}" alt="Поставка">
+                    <span class="service-item-main-text"><a href="{% url 'mainapp:services' %}#sale">Поставка</a></span>
+                    <span class="service-item-text">Поставка оборудования под ваш интерьер от мировых брендов: ABB, Schneider Electric, Legrand, Gira, Jung Zennio.</span>
+                </div>
+                <div class="service-box-item">
+                    <img class="img-service" src="{% static 'img/img_montage.svg' %}" alt="Монтаж">
+                    <span class="service-item-main-text"><a href="{% url 'mainapp:services' %}#montage">Монтаж</a></span>
+                    <span class="service-item-text">Установка системы умный дом на объекте, технический надзор монтажных работ по электрике.</span>
+                </div>
+                <div class="service-box-item">
+                    <img class="img-service" src="{% static 'img/img_programm.svg' %}" alt="Монтаж">
+                    <span class="service-item-main-text"><a href="{% url 'mainapp:services' %}#programming">Программирование</a></span>
+                    <span class="service-item-text">Программирование и настройка системы умный дом на базе лицензионного программного обеспечения.</span>
+                </div>
+            </div>
+        </div>
+        <div class="chapter-box">
+            <div class="paragraph-text">Возможности системы</div>
+            <div class="opportunities">
+                <div class="opportunities-item-box">
+                    <img class="img-opportunity" src="{% static 'img/opportunity-1.png' %}" alt="Возможности">
+                    <div class="opportunity-text-box">
+                        <span class="opportunity-box-paragraph">Климат</span>
+                        <br>
+                        <span class="opportunity-box-inside-text">Настройка индивидуальной температуры для различных зон, созданиче сценариев.</span>
+                        <br>
+                        <span class="opportunity-box-paragraph">Шторы/жалюзи</span>
+                        <br>
+                        <span class="opportunity-box-inside-text">Управление шторами, создание сценариев в зависимости от освещенности.</span>
+                    </div>
+                </div>
+                <div class="opportunities-item-box">
+                    <div class="opportunity-text-box">
+                        <span class="opportunity-box-paragraph">Безопасность</span>
+                        <br>
+                        <span class="opportunity-box-inside-text">Контроль протечек, видеонаблюдение, сигнализация, имитация присутствия, когда вас нет дома.</span>
+                        <br>
+                        <span class="opportunity-box-paragraph">Мультимедиа</span>
+                        <br>
+                        <span class="opportunity-box-inside-text">Управление любыми мультимедийными устройствами.</span>
+                    </div>
+                    <img class="img-opportunity" src="{% static 'img/opportunity-2.png' %}" alt="Возможности">
+                </div>
+                <div class="opportunities-item-box">
+                    <img class="img-opportunity" src="{% static 'img/opportunity-3.png' %}" alt="Возможности">
+                    <div class="opportunity-text-box">
+                        <span class="opportunity-box-paragraph">Освещение</span>
+                        <br>
+                        <span class="opportunity-box-inside-text">Создание световых расписаний и сценариев под любые ситуации и потребности: просмотр фильма, релакс, ночной режим.</span>
+                        <br>
+                        <span class="opportunity-box-paragraph">Управление</span>
+                        <br>
+                        <span class="opportunity-box-inside-text">Управление любым устройством через телефон, планшет, голосом. </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chapter-box">
+            <div class="paragraph-text">Как мы работаем</div>
+            <div class="how-we-work">
+                <div class="how-we-work-item">
+                    <img class="img-how-we-work for-change" src="{% static 'img/1.png' %}" alt="Как мы работаем">
+                    <div class="how-we-work-text-box">
+                        <span class="how-we-work-paragraph">Предложение</span>
+                        <span class="how-we-work-inside-text">Уточнение потребностей и пожеланий клиента. Формирование коммерческого предложения. </span>
+                    </div>
+                </div>
+                <div class="how-we-work-item">
+                    <img class="img-how-we-work for-change" src="{% static 'img/2.png' %}" alt="Как мы работаем">
+                    <div class="how-we-work-text-box">
+                        <span class="how-we-work-paragraph">Договор</span>
+                        <span class="how-we-work-inside-text">Доработка и согласование коммерческого предложения. Подписание договора и перечисление аванса.</span>
+                    </div>
+                </div>
+                <div class="how-we-work-item">
+                    <img class="img-how-we-work for-change" src="{% static 'img/3.png' %}" alt="Как мы работаем">
+                    <div class="how-we-work-text-box">
+                        <span class="how-we-work-paragraph">Проект </span>
+                        <span class="how-we-work-inside-text">Разработка проекта электроснабжения и автоматизации на базе протокола KNX. Регистрация проекта в Ассоциации KNX.</span>
+                    </div>
+                </div>
+                <div class="how-we-work-item">
+                    <img class="img-how-we-work for-change" src="{% static 'img/4.png' %}" alt="Как мы работаем">
+                    <div class="how-we-work-text-box">
+                        <span class="how-we-work-paragraph">Монтаж</span>
+                        <span class="how-we-work-inside-text">Монтажные работы на объекте. Прокладка кабельных линий, комплектация и подключение распределительного щита.</span>
+                    </div>
+                </div>
+                <div class="how-we-work-item">
+                    <img class="img-how-we-work for-change" src="{% static 'img/5.png' %}" alt="Как мы работаем">
+                    <div class="how-we-work-text-box">
+                        <span class="how-we-work-paragraph">Настройка</span>
+                        <span class="how-we-work-inside-text">Программирование оборудования. Создание индивидуального интерфейса приложения для пользователя системы.</span>
+                    </div>
+                </div>
+                <div class="how-we-work-item">
+                    <img class="img-how-we-work for-change" src="{% static 'img/6.png' %}" alt="Как мы работаем">
+                    <div class="how-we-work-text-box">
+                        <span class="how-we-work-paragraph">Финал</span>
+                        <span class="how-we-work-inside-text">Установка запрограммированного оборудования на объекте. Пусконаладочные работы. Приемка результатов.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chapter-box margin-btm-50px">
+            <a href="#" class="callback-first-content">
+                Оставить заявку
+            </a>
+        </div>
+    </div>
+{% endblock %}

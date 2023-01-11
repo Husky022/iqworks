@@ -1,0 +1,50 @@
+{% extends "mainapp/base.html" %}
+{% load static %}
+{#{% load project_tags %}#}
+{% block title %}{{ title|title }}{% endblock %}
+{% block content %}
+    <div class="header-text add-border">Портфолио</div>
+    {% for object in object_list %}
+        <div class="content-container add-border">
+            {% if object.is_active %}
+                <div class="object-preview">
+                    {% if forloop.counter|divisibleby:"2" %}
+                        <div class="container-object-preview-content add-border">
+                    {% else %}
+                        <div class="container-object-preview-content reverse add-border">
+                    {% endif %}
+                            <div class="container-img-object-preview add-border">
+                                <img class="img-object-preview add-border" src="{% static 'img/img_example_1.png' %}" alt="Фото объекта">
+                            </div>
+                            <div class="obj-info-preview">
+                                <div class="container-object-info add-border">
+                                    <img class="img-object-preview-count add-border for-change" src="{% get_static_prefix %}img/{{forloop.counter}}.png" alt="Фото объекта">
+                                    <div class="preview-object-about add-border">
+                                        <div class="container-object-preview-name add-border">
+                                            <p>{{ object.preview }}, <span class="red">{{ object.square }}м2</span></p>
+                                        </div>
+                                        <div class="container-object-preview-text add-border">
+                                            <p>{{ object.text|truncatewords:10 }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-object-preview-button-next add-border">
+                                    <div class="buttons-on-preview">
+                                        {% if object.video %}
+                                            <a class="">
+                                                <img class="img-icon-video" src="{% static 'img/play_video.svg' %}" alt="">
+                                            </a>
+                                        {% endif %}
+                                            <a class="" href="{% url 'portfolioapp:object_page' object.pk %}">
+                                                Подробнее
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,99 @@
+{% extends "mainapp/base.html" %}
+{% load static %}
+{#{% load project_tags %}#}
+{% block title %}{{ title|title }}{% endblock %}
+{% block content %}
+    <div class="calc-content-container">
+        <div class="header-text">Рассчитайте стоимость</div>
+        <div class="calculate-box">
+            <div class="calculator">
+                <div class="form-calculator">
+                    {% csrf_token %}
+                    <div class="calc-main">
+                        <div class="calculator-left">
+                            <div class="calc-paragraph-text">Желаемый функционал</div>
+                            <div class="functions-wrapper">
+                                <div class="calc-functions">
+                                    <label class="option">
+                                        <input name="chk-base" value="chk-light" id="chk-light" class="checkbox-ios" type="checkbox">
+                                        <p>Освещение</p>
+                                    </label>
+                                    <label class="option">
+                                        <input name="chk-base" value="chk-shutters" class="checkbox-ios" type="checkbox">
+                                        <p>Шторы</p>
+                                    </label>
+                                    <label class="option">
+                                        <input name="chk-base" value="chk-ventilation" class="checkbox-ios" type="checkbox">
+                                        <p>Вентиляция</p>
+                                    </label>
+                                    <label class="option">
+                                        <input name="chk-base" value="chk-condition" class="checkbox-ios" type="checkbox">
+                                        <p>Кондиционирование</p>
+                                    </label>
+                                </div>
+                                <div class="calc-functions">
+                                    <label class="option">
+                                        <input name="chk-base" value="chk-warm-floors" class="checkbox-ios" type="checkbox">
+                                        <p>Теплые полы</p>
+                                    </label>
+                                    <label class="option">
+                                        <input name="chk-base" value="chk-security" class="checkbox-ios" type="checkbox">
+                                        <p>Безопасность</p>
+                                    </label>
+                                    <label class="option">
+                                        <input name="chk-secondary" value="chk-outdoor-management" class="checkbox-ios" type="checkbox">
+                                        <p>Удаленное управление</p>
+                                    </label>
+                                    <label class="option">
+                                        <input name="chk-secondary" value="chk-voice-helpers" class="checkbox-ios" type="checkbox" />
+                                        <p>Голосовые помощники</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calculator-right">
+                            <div class="calc-paragraph-text">Сведения об объекте</div>
+                            <div>
+                                <label class="option">
+                                    <input id="square" name="chk-option" class="input-number" type="number" min="45">
+                                    <p>Площадь, м2</p>
+                                </label>
+                                <div id="object_type">
+                                    <label class="option">
+                                        <input name="chk-type" value="chk-flat" class="checkbox-ios plus_space" type="checkbox"/>
+                                        <p>Квартира</p>
+                                    </label>
+                                    <label class="option">
+                                        <input name="chk-type" value="chk-house" class="checkbox-ios plus_space" type="checkbox" />
+                                        <p>Коттедж</p>
+                                    </label>
+                                    <label class="option">
+                                        <input name="chk-type" value="chk-office" class="checkbox-ios plus_space" type="checkbox" />
+                                        <p>Офис</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="calc-down-part">
+                        <div id="calc-result" class="calc-result">
+                        </div>
+                        <div class="buttons-container">
+                            <div class="calc-button">
+                                <button id="send-calculation" class="calc-send">
+                                    Рассчитать
+                                </button>
+                            </div>
+                            <div id="reset-calc">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result-note-after">
+
+        </div>
+    </div>
+
+{% endblock %}

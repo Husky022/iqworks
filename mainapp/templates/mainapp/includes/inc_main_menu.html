@@ -1,0 +1,27 @@
+{% load static %}
+
+<div class="container-menu fixed">
+    <div class="container-logo">
+        <a href="{% url 'mainapp:main' %}"><img src="{% static 'img/logo.png' %}" alt="Главная"></a>
+    </div>
+    <div class="container-menu-buttons">
+        <ul class="menu-buttons-list">
+{#            <li class="menu-button"><a href="{% url 'mainapp:main' %}">Главная</a></li>#}
+            <li class="menu-button"><a href="{% url 'mainapp:services' %}">Услуги</a></li>
+            <li class="menu-button"><a href="{% url 'calcapp:calculate' %}">Стоимость</a></li>
+            <li class="menu-button"><a href="{% url 'portfolioapp:objects' %}">Портфолио</a></li>
+{#            <li class="menu-button"><a href="{% url 'articleapp:articles' %}">Статьи</a></li>#}
+{#            <li class="menu-button"><a href="{% url 'mainapp:command' %}">Команда</a></li>#}
+            <li class="menu-button"><a href="{% url 'mainapp:contacts' %}">Контакты</a></li>
+        </ul>
+    </div>
+    <div class="container-menu-contacts">
+        <ul>
+            <li><a href="#">Тел. +7 (495) 008-81-68</a></li>
+            <li>
+                <a href="#" id="start"><img class="img-callback" src="{% static 'img/phone-icon.svg' %}"
+                                  alt="Обратный звонок">Заказать звонок</a>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=10">
+         {% block stylesheets %}
+            {% include 'mainapp/includes/inc_stylesheets.html' %}
+         {% endblock stylesheets %}
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+    {% csrf_token %}
+    <body>
+        <header>
+            {% block menu %}
+                {% include 'mainapp/includes/inc_main_menu.html' %}
+            {% endblock %}
+        </header>
+        <section>
+            <div class="base-container">
+                {% block content %}{% endblock %}
+            </div>
+        </section>
+        <footer>
+            {% block footer %}
+                {% include 'mainapp/includes/inc_footer.html' %}
+            {% endblock %}
+        </footer>
+        {% block js %}
+            {% include 'mainapp/includes/inc_js.html' %}
+        {% endblock %}
+        <div id="popUp">
+            <p class="popup-label">Свяжитесь с нами!</p>
+            <span id="close">X</span>
+            <form class="contact-form" method="POST">
+                {% csrf_token %}
+                <table>
+                    {{ appform }}
+                </table>
+                <input class="form-submit-button" type="submit" value="Отправить">
+            </form>
+            <p class="about-privacy"> Нажимая кнопку "Отправить", Вы соглашаетесь с <a class="about-privacy-link"
+            href="{% url 'mainapp:privacy' %}">политикой конфиденциальности</a>
+            </p>
+        </div>
+        <div id="video-popUp">
+              <span id="video-close">X</span>
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/mIhXeyJi5RM" title="YouTube video player"
+                      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
+        </div>
+        <div id="overlay"></div>
+    </body>
+</html>
