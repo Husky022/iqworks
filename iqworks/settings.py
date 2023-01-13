@@ -146,3 +146,11 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_HOST_USER = mail_user
 EMAIL_HOST_PASSWORD = mail_password
+
+# Celery settings
+CELERY_BROKER_URL = "redis://localhost:6379"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"
+
+# option for RabbitMQ
+# CELERY_BROKER_URL = "amqp://myuser:mypassword@localhost:5672/myvhost"
+
