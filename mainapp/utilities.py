@@ -1,6 +1,5 @@
 from .models import Client
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
+from .tasks import send_email_task
 from iqworks.secrets_local import mail_user
 
 
@@ -17,8 +16,5 @@ class ClientHandler:
 		new_client.save()
 
 	def send_mail(self):
-		client = f'Имя: ' + self.name + 'Почта: ' + self.mail + 'Телефон: ' + self.phone
-		send_mail('Новая заявка', client, mail_user, [mail_user])
-		data = {'name': self.name, 'mail': self.mail, 'phone': self.phone}
-		msg = render_to_string('mainapp/template_mail.html', {'context': data})
-		send_mail('Обратная связь', msg, mail_user, [self.mail], html_message=msg)
+		send_email_task.delay(self.name, self.mail, mail_user, self.phone)
+
