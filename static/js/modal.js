@@ -10,8 +10,6 @@ $(document).ready(function() {
 		});
 	});
 
-
-
     $('#video').click( function(event){
 		event.preventDefault();
 		$('#overlay').fadeIn(250,
@@ -22,23 +20,14 @@ $(document).ready(function() {
 		});
 	});
 
-	$('#close, #overlay').click( function(){
-		$('#popUp')
+	$('#close, #overlay, #video-close').click( function(){
+		$('#popUp, #video-popUp')
 			.animate({opacity: 0, top: '0%'}, 490,
 				function(){
 					$(this).css('display', 'none');
 					$('#overlay').fadeOut(220);
 				}
 			);
-	});
 
-    $('#video-close, #overlay').click( function(){
-		$('#video-popUp')
-			.animate({opacity: 0, top: '0%'}, 490,
-				function(){
-					$(this).css('display', 'none');
-					$('#overlay').fadeOut(220);
-				}
-			);
 	});
 });
