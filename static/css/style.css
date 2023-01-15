@@ -890,7 +890,7 @@ span{
 
 /*Для модальных окон*/
 
-#popUp, #video-popUp {
+#popUp, #video-popUp, #player {
 	position: fixed;
 	border-radius: 11px;
 	background: #ffffff;
@@ -906,10 +906,10 @@ span{
     padding: 17px;
 }
 
-#video-popUp {
-	left: 36%;
-	height: 315px;
-	width: 28%;
+#video-popUp, #player {
+	left: 30%;
+	height: 500px;
+	width: 40%;
 }
 
 #popUp #close, #video-popUp #video-close {

@@ -43,12 +43,8 @@
             href="{% url 'mainapp:privacy' %}">политикой конфиденциальности</a>
             </p>
         </div>
-        <div id="video-popUp">
-              <span id="video-close">X</span>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/mIhXeyJi5RM" title="YouTube video player"
-                      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowfullscreen></iframe>
-        </div>
+        <div id="player"></div>
+            <script src="{% static 'js/player.js' %}"></script>
         <div id="overlay"></div>
     </body>
 </html>
